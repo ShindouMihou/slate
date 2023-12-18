@@ -28,6 +28,7 @@ export const proxy = (hono: HonoWithBindings) => {
             const lkey = key.toLowerCase()
             if (lkey.startsWith('x-slate-')) return
             if (lkey === 'x-real-ip') return
+            if (lkey.startsWith('cf-')) return;
             headersCopy[key] = value
         })
 
